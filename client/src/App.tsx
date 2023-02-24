@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 
 type Exercise = {
   id: number;
@@ -20,6 +19,22 @@ const App: React.FC = () => {
   const [exercises, setExercises] = useState(initialExercises);
   const [exerciseTables, setExerciseTables] = useState<{ date: string; exercises: Exercise[] }[]>([]);
   const [newExercise, setNewExercise] = useState("");
+
+  
+  useEffect(() => {
+    const prevExercises = localStorage.getItem("prevExercises");
+    if (prevExercises) {
+      setExercises(JSON.parse(prevExercises));
+    }
+    const storedExerciseTables = localStorage.getItem("exerciseTables");
+    if (storedExerciseTables) {
+      setExerciseTables(JSON.parse(storedExerciseTables));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("prevExercises", JSON.stringify(exercises));
+  }, [exercises]);
 
   const handleExerciseChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewExercise(event.target.value);
@@ -60,21 +75,18 @@ const App: React.FC = () => {
 
   const handleFinishDay = () => {
     const currentDate = new Date().toLocaleDateString();
-    
-  // Create a new table with the same structure and data as the original table
-  const newExercises = exercises.map((exercise) => ({ ...exercise }));
-    
-  // Add the new table to the list of tables
-  setExerciseTables([...exerciseTables, { date: currentDate, exercises: newExercises }]);
-
-  // Store the updated exercise tables in localStorage
-  localStorage.setItem("exerciseTables", JSON.stringify([...exerciseTables, newExercises]));
-
-  // Reset the original table to the initial value
-  setExercises(initialExercises);
+    // Create a new table with the same structure and data as the original table
+    const newExercises = exercises.map((exercise) => ({ ...exercise }));
+    // Add the new table to the list of tables
+    setExerciseTables([...exerciseTables, { date: currentDate, exercises: newExercises }]);
+    // Store the updated exercise tables in localStorage
+    localStorage.setItem("exerciseTables", JSON.stringify([...exerciseTables, { date: currentDate, exercises: newExercises }]));
+    // Reset the original table to the initial value
+    setExercises(initialExercises);
 };
 
 const handleClearTables = () => {
+  localStorage.removeItem("exerciseTables");
   setExerciseTables([]);
 };
 
@@ -89,10 +101,10 @@ const handleClearTables = () => {
         <thead>
           <tr>
             <th>Exercise</th>
-            <th>Rep Count</th>
-            <th>Add to Total</th>
+            <th className="totalcol">Rep Count</th>
+            <th className="totalcol">Add</th>
             <th>Total Count</th>
-            <th>Delete</th>
+            <th className="totalcol">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -120,19 +132,19 @@ const handleClearTables = () => {
   <div className="exercise-tables">
     {exerciseTables.map((table: { date: string, exercises: Exercise[] }, index: number) => (
       <div key={table.date}>
-        <h2>{table.date}</h2>
+        <h5 className="date">{table.date}</h5>
         <table>
           <thead>
             <tr>
               <th>Exercise</th>
-              <th>Total Count</th>
+              <th className="totalcol">Total Count</th>
             </tr>
           </thead>
           <tbody>
             {table.exercises.map((exercise: Exercise) => (
               <tr key={exercise.id}>
                 <td>{exercise.name}</td>
-                <td>{exercise.totalCount}</td>
+                <td >{exercise.totalCount}</td>
               </tr>
             ))}
           </tbody>
