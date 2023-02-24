@@ -1,0 +1,95 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #363636;
+}
+
+h1 {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #DC4492;
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.add-exercise {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.add-exercise input {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: none;
+}
+
+.add-exercise button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #7772B6;
+  color: white;
+  cursor: pointer;
+  margin-top: -1px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+  font-weight: normal;
+  background-color: #F98D94;
+
+}
+
+table th {
+  background-color: #DC4492;
+  color: white;
+}
+
+table td {
+  border-top: 1px solid #f0f0f0;
+}
+
+table tr:last-child td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+table td:last-child {
+  text-align: center;
+}
+
+table td button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #7772B6;
+  color: white;
+  cursor: pointer;
+  margin-top: -1px;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #f8b500;
+  color: white;
+  cursor: pointer;
+}
