@@ -25,7 +25,7 @@ h1 {
   color: white;
   cursor: pointer;
   margin-top: -1px;
-  width: 100%;
+  margin-left: 0.5rem;
 }
 
 table {
@@ -133,6 +133,9 @@ button.finish-day {
     flex-direction: column;
   }
   
+  .add-exercise button {
+    width: 100%;
+  }
   .add-exercise input {
     margin-bottom: 10px;
     width: 100%;
