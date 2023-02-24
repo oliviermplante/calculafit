@@ -85,7 +85,7 @@ const handleClearTables = () => {
         <input type="text" value={newExercise} onChange={handleExerciseChange} placeholder="Enter new exercise" />
         <button onClick={handleAddExercise}>Add</button>
       </div>
-      <table>
+      <table className="main-table">
         <thead>
           <tr>
             <th>Exercise</th>
@@ -113,7 +113,7 @@ const handleClearTables = () => {
           ))}
         </tbody>
       </table>
-      <button onClick={handleFinishDay}>Finish Day</button>
+      <button className="finishButton" onClick={handleFinishDay}>Finish Day</button>
       {exerciseTables.length > 0 && (
         <div className="exercise-tables">
           {exerciseTables.length > 0 && (
@@ -141,7 +141,7 @@ const handleClearTables = () => {
     ))}
   </div>
 )}
-      <button onClick={handleClearTables}>Clear Tables</button>
+      <button className="finishButton" onClick={handleClearTables} >Clear Tables</button>
         </div>
       )}
     </div>

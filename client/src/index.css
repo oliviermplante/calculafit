@@ -68,34 +68,46 @@ button.finish-day {
   cursor: pointer;
 }
 
-@media (max-width: 767px) {
-  table {
-    font-size: 0.8rem;
-  }
-
-  th,
-  td {
-    padding: 0.25rem;
-  }
-
-  input[type="number"] {
-    width: 3rem;
-    padding: 0.25rem;
-  }
-
-  input[type="text"] {
-    padding: 0.25rem;
-  }
-
-  button {
-    font-size: 0.8rem;
-    padding: 0.25rem;
-    margin-right: 0.25rem;
-  }
-
-  button.finish-day {
-    margin: 1rem;
-    padding: 0.5rem;
-    font-size: 0.8rem;
-  }
+.finishButton {
+/* center the buttons */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-right: 200px !important;
+  background-color: #7772B6;
 }
+
+@media (max-width: 800px) {
+ 
+  .App {
+    padding: 10px;
+  }
+  
+  .add-exercise {
+    flex-direction: column;
+  }
+  
+  .add-exercise input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .main-table th,
+  .main-table td {
+    font-size: 12px;
+    padding: 5px;
+  }
+  
+  .exercise-tables h2 {
+    font-size: 14px;
+  }
+  
+  .exercise-tables table th,
+  .exercise-tables table td {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+}
+
+
