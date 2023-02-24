@@ -20,7 +20,7 @@ const App: React.FC = () => {
   const [exerciseTables, setExerciseTables] = useState<{ date: string; exercises: Exercise[] }[]>([]);
   const [newExercise, setNewExercise] = useState("");
 
- /* useEffect(() => {
+  useEffect(() => {
     const prevExercises = localStorage.getItem("prevExercises");
     if (prevExercises) {
       setExercises(JSON.parse(prevExercises));
@@ -33,7 +33,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     localStorage.setItem("prevExercises", JSON.stringify(exercises));
-  }, [exercises]); */
+  }, [exercises]);
 
   const handleExerciseChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNewExercise(event.target.value);
