@@ -71,7 +71,6 @@ table td button {
 
 .totalcol {
   text-align: center;
-
 }
 
 .date {
@@ -116,12 +115,11 @@ button.finish-day {
 }
 
 .finishButton {
-/* center the buttons */
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin-right: 200px !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #7772B6;
+  width: 30%;
 }
 
 @media (max-width: 800px) {
@@ -157,6 +155,10 @@ button.finish-day {
 
   .finishButton {
     width: 100%;
+  }
+
+  .centercol {
+    text-align: center;
   }
 }
 

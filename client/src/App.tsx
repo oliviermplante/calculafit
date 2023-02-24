@@ -101,10 +101,10 @@ const handleClearTables = () => {
         <thead>
           <tr>
             <th>Exercise</th>
-            <th className="totalcol">Rep Count</th>
-            <th className="totalcol">Add</th>
+            <th className="centercol">Rep Count</th>
+            <th className="centercol">Add</th>
             <th>Total Count</th>
-            <th className="totalcol">Delete</th>
+            <th className="centercol">Delete</th>
           </tr>
         </thead>
         <tbody>
