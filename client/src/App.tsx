@@ -20,7 +20,13 @@ const App: React.FC = () => {
   const [exerciseTables, setExerciseTables] = useState<{ date: string; exercises: Exercise[] }[]>([]);
   const [newExercise, setNewExercise] = useState("");
 
-  
+    // Check if exercise tables are in localStorage and set state if they are
+    if (localStorage.getItem("exerciseTables")) {
+      const tables = JSON.parse(localStorage.getItem("exerciseTables") || "");
+      const updatedTables = tables.filter((v: any) => v && v.exercises);
+      setExerciseTables(updatedTables);
+    }
+    
   useEffect(() => {
     const prevExercises = localStorage.getItem("prevExercises");
     if (prevExercises) {

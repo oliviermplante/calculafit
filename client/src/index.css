@@ -25,6 +25,7 @@ h1 {
   color: white;
   cursor: pointer;
   margin-top: -1px;
+  width: 100%;
 }
 
 table {
